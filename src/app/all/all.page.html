@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>all</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding" color="success">
+  <ion-card >
+    <ion-card-title>
+      <p>القاهرة</p>
+      <p>مواقيت الصلاه</p>
+      <p>{{day}}</p>
+    </ion-card-title>
+  </ion-card>
+
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <div class="col"  *ngFor="let x of filter">
+      <div class="card h-100">
+        <div class="card-body">
+          <p>'Fajr': {{x.timings.Fajr}}</p>
+          <p>'Dhuhr': {{x.timings.Dhuhr}}</p>
+          <p>'Asr': {{x.timings.Asr}}</p>
+          <p>'Maghrib': {{x.timings.Maghrib}}</p>
+          <p>'Isha': {{x.timings.Isha}}</p>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

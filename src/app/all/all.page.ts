@@ -1,17 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  imports:[CommonModule,IonicModule],
+  selector: 'app-all',
   standalone:true,
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  imports:[CommonModule,IonicModule],
+  templateUrl: './all.page.html',
+  styleUrls: ['./all.page.scss'],
 })
-export class HomePage {
+export class AllPage implements OnInit {
+
 
   constructor(private httpcliet:HttpClient , private router:Router) {}
 
@@ -23,7 +24,7 @@ export class HomePage {
 
   filter:any[]=[];
 
-  day:number=new Date().getDate();
+  day:string=new Date().toLocaleDateString();
   date:number=new Date().getUTCMonth()+1;
 
 
@@ -38,9 +39,7 @@ export class HomePage {
     console.log(this.adan[0]);
     console.log(this.date);
 
-                                         
-    this.filter = this.adan.filter((item:any)=>item.date.gregorian.day ==this.day )
-    console.log(this.filter)
+ 
    })
   }
 
