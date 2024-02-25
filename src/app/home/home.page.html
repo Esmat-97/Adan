@@ -1,0 +1,30 @@
+
+
+  <ion-content fullscreen class="ion-padding"  color="success">  
+   
+    
+    
+     <ion-card *ngFor="let x of filter"> 
+      <ion-card-title>  
+        
+        <p >القاهرة</p>
+        <p>مواقيت الصلاه</p>
+        
+      </ion-card-title>  
+      
+     
+      <ion-card-content *ngFor="let x of filter">  
+<p>     'Fajr':{{x.timings.Fajr}}</p>
+  <p>   'Dhuhr': {{x.timings.Dhuhr}} </p>
+    <p>  'Asr': {{x.timings.Asr}}</p>
+      <p>   'Maghrib':{{x.timings.Maghrib}}  </p>
+        <p> 'Isha': {{x.timings.Isha}}  </p>
+
+      </ion-card-content>  
+    
+
+    </ion-card>
+
+      
+    </ion-content>
+   
