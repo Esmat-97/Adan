@@ -16,7 +16,14 @@
     </ion-content>
   </ion-menu>
 
-  <ion-router-outlet id="main-content">
+
+
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+
+
+
 
     
     <ion-header>
@@ -34,26 +41,71 @@
 
 
     <ion-content fullscreen class="ion-padding" color="success">
-      <ion-card *ngFor="let x of filter">
+
         <ion-card-title>
           <p>القاهرة</p>
           <p>مواقيت الصلاه</p>
         </ion-card-title>
-        <ion-card-content *ngFor="let x of filter">
-          <p>'Fajr': {{x.timings.Fajr}}</p>
-          <p>'Dhuhr': {{x.timings.Dhuhr}}</p>
-          <p>'Asr': {{x.timings.Asr}}</p>
-          <p>'Maghrib': {{x.timings.Maghrib}}</p>
-          <p>'Isha': {{x.timings.Isha}}</p>
-          <button class="btn btn-info" (click)="goto()">
-            more
-          </button>
-        </ion-card-content>
-      </ion-card>
+
+     
+        <div class="row row-cols-3 row-cols-lg-6 g-4 row-cols-md-3 g-4 row-cols-sm-10 g-4" *ngFor="let x of filter">
+
+
+          <div class="col-4 " >
+            <div class="card"> 
+              <div class="card-header">Fajr </div>
+              <div class="card-body">
+                <p class="card-text"> {{x.timings.Fajr}}</p>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-4">
+            <div class="card h-100">
+              <div class="card-header">Dhuhr</div>
+              <div class="card-body">
+                <p class="card-text">{{x.timings.Dhuhr}}.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card h-100">
+              <div class="card-header">Asr </div>
+              <div class="card-body">
+                <p class="card-text"> {{x.timings.Asr}}.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card h-100">
+              <div class="card-header">Maghrib </div>
+              <div class="card-body">
+                <p class="card-text">{{x.timings.Maghrib}}.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="card h-100">
+              <div class="card-header"> Isha</div>
+                <div class="card-body">
+                <p class="card-text">{{x.timings.Isha}}</p>
+              </div>
+            </div>
+        </div>
+
+       
+
+      </div>
+
+ <button class="btn btn-primary" style="margin-left: 120px; margin-top: 50px;" (click)="goto()">more</button>
+      
     </ion-content>
 
 
-  </ion-router-outlet>
+ 
 
 
 </ion-app>
